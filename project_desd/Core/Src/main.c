@@ -112,37 +112,37 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	HAL_ADC_Start(&hadc1);
-	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
-	value=HAL_ADC_GetValue(&hadc1);
-	sprintf(str1,"field1=%d&",value);
-	//HAL_UART_Transmit(&huart2, str, sizeof(str), HAL_MAX_DELAY);
-	HAL_ADC_Stop(&hadc1);
-
-	//HAL_Delay(1000);
-
-	HAL_ADC_Start(&hadc2);
-	HAL_ADC_PollForConversion(&hadc2, HAL_MAX_DELAY);
-	value=HAL_ADC_GetValue(&hadc2);
-	sprintf(str2,"field2=%d&",value);
-	//HAL_UART_Transmit(&huart2, str2, sizeof(str), HAL_MAX_DELAY);
-	HAL_ADC_Stop(&hadc2);
-
-	//HAL_Delay(1000);
-
-	HAL_ADC_Start(&hadc3);
-	HAL_ADC_PollForConversion(&hadc3, HAL_MAX_DELAY);
-	value=HAL_ADC_GetValue(&hadc3);
-	sprintf(str3,"field3=%d\n",value);
-	//HAL_UART_Transmit(&huart2, str, sizeof(str), HAL_MAX_DELAY);
-	HAL_ADC_Stop(&hadc3);
-	strcpy(str,str1);
-	strcat(str,str2);
-	strcat(str,str3);
-	HAL_UART_Transmit(&huart2, str, sizeof(str), HAL_MAX_DELAY);
-	HAL_Delay(1000);
 
     /* USER CODE BEGIN 3 */
+	  HAL_ADC_Start(&hadc1);
+	  	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+	  	value=HAL_ADC_GetValue(&hadc1);
+	  	sprintf(str1,"field1=%d&",value);
+	  	//HAL_UART_Transmit(&huart2, str, sizeof(str), HAL_MAX_DELAY);
+	  	HAL_ADC_Stop(&hadc1);
+
+	  	//HAL_Delay(1000);
+
+	  	HAL_ADC_Start(&hadc2);
+	  	HAL_ADC_PollForConversion(&hadc2, HAL_MAX_DELAY);
+	  	value=HAL_ADC_GetValue(&hadc2);
+	  	sprintf(str2,"field2=%d&",value);
+	  	//HAL_UART_Transmit(&huart2, str2, sizeof(str), HAL_MAX_DELAY);
+	  	HAL_ADC_Stop(&hadc2);
+
+	  	//HAL_Delay(1000);
+
+	  	HAL_ADC_Start(&hadc3);
+	  	HAL_ADC_PollForConversion(&hadc3, HAL_MAX_DELAY);
+	  	value=HAL_ADC_GetValue(&hadc3);
+	  	sprintf(str3,"field3=%d\n",value);
+	  	//HAL_UART_Transmit(&huart2, str, sizeof(str), HAL_MAX_DELAY);
+	  	HAL_ADC_Stop(&hadc3);
+	  	strcpy(str,str1);
+	  	strcat(str,str2);
+	  	strcat(str,str3);
+	  	HAL_UART_Transmit(&huart2, str, sizeof(str), HAL_MAX_DELAY);
+	  	HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }

@@ -60,8 +60,8 @@ all: main-build
 main-build: project_desd.elf secondary-outputs
 
 # Tool invocations
-project_desd.elf project_desd.map: $(OBJS) $(USER_OBJS) /home/amit/STMdemo/project_desd/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "project_desd.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/amit/STMdemo/project_desd/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="project_desd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+project_desd.elf project_desd.map: $(OBJS) $(USER_OBJS) /home/amit/DESD-Project/project_desd/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "project_desd.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/amit/DESD-Project/project_desd/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="project_desd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
